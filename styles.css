@@ -1,0 +1,344 @@
+
+/* =========================================
+   UN JARDÍN LLAMADO TÚ
+   Diseño visual para Sandra
+   ========================================= */
+
+/* 1. CONFIGURACIÓN GENERAL */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+    --violet-dark: #21152f;
+    --violet: #684477;
+    --violet-light: #b58acb;
+    --pink: #e9b6d0;
+    --gold: #e6c58d;
+    --cream: #fff6ec;
+    --text-light: #f8eefa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--violet-dark);
+    color: var(--text-light);
+    overflow-x: hidden;
+}
+
+
+/* 2. PORTADA PRINCIPAL */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 70px 24px 100px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            ellipse at 50% 85%,
+            rgba(219, 143, 177, 0.38),
+            transparent 45%
+        ),
+        radial-gradient(
+            ellipse at 15% 20%,
+            rgba(112, 75, 144, 0.45),
+            transparent 45%
+        ),
+        linear-gradient(
+            160deg,
+            #171326 0%,
+            #382344 45%,
+            #79516e 75%,
+            #d28c91 100%
+        );
+}
+
+
+/* 3. ESTRELLAS DEL CIELO */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(2px 2px at 15% 20%, #fff 98%, transparent),
+        radial-gradient(2px 2px at 75% 15%, #fff0c9 98%, transparent),
+        radial-gradient(1px 1px at 40% 35%, #fff 98%, transparent),
+        radial-gradient(2px 2px at 85% 55%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 25% 65%, #fff0c9 98%, transparent),
+        radial-gradient(2px 2px at 60% 75%, #fff 98%, transparent),
+        radial-gradient(1px 1px at 90% 30%, #fff 98%, transparent),
+        radial-gradient(2px 2px at 8% 80%, #fff 98%, transparent);
+
+    background-size: 100% 100%;
+    animation: twinkle 5s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.35;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* 4. CONTENIDO DE LA PORTADA */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 780px;
+
+    animation: appear 1.8s ease both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eyebrow {
+    color: var(--gold);
+    font-size: 0.68rem;
+    letter-spacing: 5px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.8rem, 9vw, 7rem);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--cream);
+    text-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 span {
+    display: block;
+    color: #edc4d9;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+.hero-subtitle {
+    max-width: 540px;
+    margin: 30px auto;
+    color: #f3ddea;
+    font-size: 0.92rem;
+    line-height: 1.9;
+    font-weight: 300;
+}
+
+.flower-decoration {
+    color: var(--gold);
+    font-size: 3rem;
+    margin: 20px 0;
+    animation: flowerFloat 4s ease-in-out infinite;
+}
+
+@keyframes flowerFloat {
+    0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+}
+
+.hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: var(--cream);
+    margin-bottom: 10px;
+}
+
+.intro-message {
+    color: #f5d8e7;
+    font-size: 0.9rem;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+
+/* 5. BOTÓN PRINCIPAL */
+
+.main-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+
+    padding: 16px 30px;
+    border: 1px solid rgba(255, 224, 190, 0.7);
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #b98aaf,
+        #805b91
+    );
+
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.82rem;
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 30px rgba(20, 10, 30, 0.25);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                background 0.3s ease;
+}
+
+.main-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(20, 10, 30, 0.4);
+
+    background: linear-gradient(
+        135deg,
+        #d2a5c5,
+        #966eaa
+    );
+}
+
+.main-button span {
+    font-size: 1.1rem;
+}
+
+.small-note {
+    color: rgba(255, 240, 248, 0.7);
+    font-size: 0.7rem;
+    margin-top: 22px;
+    letter-spacing: 1px;
+}
+
+
+/* 6. INDICADOR DE DESPLAZAMIENTO */
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    color: rgba(255, 239, 248, 0.7);
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+}
+
+.scroll-indicator span:last-child {
+    font-size: 1.3rem;
+    animation: arrowDown 1.5s infinite;
+}
+
+@keyframes arrowDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+
+/* 7. SECCIONES QUE CONSTRUIREMOS */
+
+.content-section {
+    position: relative;
+    min-height: 30vh;
+    padding: 70px 24px;
+    background: var(--violet-dark);
+}
+
+
+/* 8. ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 55px 20px 90px;
+    }
+
+    .eyebrow {
+        font-size: 0.58rem;
+        letter-spacing: 3px;
+    }
+
+    .hero-subtitle {
+        font-size: 0.82rem;
+    }
+
+    .hero h2 {
+        font-size: 2.1rem;
+    }
+
+    .intro-message {
+        font-size: 0.82rem;
+    }
+
+    .main-button {
+        padding: 15px 24px;
+        font-size: 0.75rem;
+    }
+
+    .scroll-indicator {
+        font-size: 0.58rem;
+    }
+}
+
+
+/* 9. ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+.content-section:empty {
+    display: none;
+}
