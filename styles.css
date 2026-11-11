@@ -342,3 +342,53 @@ body {
 .content-section:empty {
     display: none;
 }
+
+/* =================================
+   MARIPOSAS DEL JARDÍN
+   ================================= */
+
+.butterfly {
+    position: absolute;
+    z-index: 5;
+    left: var(--start-left);
+    bottom: -60px;
+    font-size: var(--butterfly-size, 24px);
+    opacity: 0;
+    pointer-events: none;
+    animation: butterfly-flight var(--flight-duration, 14s) linear infinite;
+    animation-delay: var(--flight-delay, 0s);
+}
+
+@keyframes butterfly-flight {
+    0% {
+        transform: translate(0, 0) rotate(-15deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.9;
+    }
+
+    50% {
+        transform: translate(45px, -50vh) rotate(15deg);
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-25px, -110vh) rotate(-10deg);
+        opacity: 0;
+    }
+}
+
+/* Evitamos animaciones si el visitante lo prefiere */
+@media (prefers-reduced-motion: reduce) {
+    .butterfly {
+        animation: none;
+        display: none;
+    }
+}
+
