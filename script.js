@@ -1,54 +1,107 @@
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Identificamos el botón y la primera sección del jardín
     const enterButton = document.getElementById("enterGarden");
     const messageSection = document.getElementById("mensaje");
+    const hero = document.getElementById("inicio");
 
-    // Verificamos que los elementos existan
-    if (!enterButton || !messageSection) {
-        console.error("No se encontró el botón o la sección del mensaje.");
+    if (!enterButton || !messageSection || !hero) {
+        console.error("No se encontraron los elementos necesarios.");
         return;
     }
 
-    // Acción al pulsar el botón de bienvenida
+    let gardenOpened = false;
+
+    // Crear las mariposas del jardín
+    function createButterflies() {
+
+        const positions = [8, 22, 38, 55, 72, 88];
+
+        positions.forEach((position, index) => {
+
+            const butterfly = document.createElement("span");
+
+            butterfly.className = "butterfly";
+            butterfly.textContent = "🦋";
+            butterfly.setAttribute("aria-hidden", "true");
+
+            butterfly.style.setProperty(
+                "--start-left",
+                position + "%"
+            );
+
+            butterfly.style.setProperty(
+                "--butterfly-size",
+                (20 + Math.random() * 16) + "px"
+            );
+
+            butterfly.style.setProperty(
+                "--flight-duration",
+                (12 + Math.random() * 8) + "s"
+            );
+
+            butterfly.style.setProperty(
+                "--flight-delay",
+                (index * 1.5) + "s"
+            );
+
+            hero.appendChild(butterfly);
+
+        });
+    }
+
+    // Acción del botón principal
     enterButton.addEventListener("click", function () {
 
-        // Creamos el primer mensaje para Sandra
-        messageSection.innerHTML = `
-            <div class="message-card">
-                <p class="eyebrow">UN JARDÍN HECHO CON CARIÑO</p>
+        if (!gardenOpened) {
 
-                <h2>Hay personas que dejan huellas bonitas...</h2>
+            messageSection.innerHTML = `
+                <div class="message-card">
 
-                <p>
-                    Sandra, hoy quiero regalarte un pequeño espacio
-                    creado pensando en ti. Un lugar donde las flores,
-                    los recuerdos y las palabras tienen algo que contarte.
-                </p>
+                    <p class="eyebrow">
+                        UN JARDÍN HECHO CON CARIÑO
+                    </p>
 
-                <p>
-                    No necesitas recorrerlo con prisa.
-                    Cada rincón guarda un detalle preparado especialmente
-                    para celebrar la persona que eres.
-                </p>
+                    <h2>
+                        Hay personas que dejan huellas bonitas...
+                    </h2>
 
-                <div class="flower-decoration">✿</div>
+                    <p>
+                        Sandra, hoy quiero regalarte un pequeño
+                        espacio creado pensando en ti.
+                    </p>
 
-                <p class="closing-message">
-                    Feliz cumpleaños, Sandra. Que la vida siempre
-                    encuentre motivos para hacerte florecer.
-                </p>
-            </div>
-        `;
+                    <p>
+                        Un lugar donde las flores, los recuerdos
+                        y las palabras tienen algo que contarte.
+                    </p>
 
-        // Cambiamos el texto del botón
-        enterButton.textContent = "El jardín te está esperando 🦋";
+                    <p>
+                        No necesitas recorrerlo con prisa.
+                        Cada rincón guarda un detalle preparado
+                        para celebrar la persona que eres.
+                    </p>
 
-        // Evitamos que se repita la acción
-        enterButton.disabled = true;
+                    <div class="flower-decoration">✿</div>
 
-        // Llevamos suavemente a Sandra hasta el mensaje
+                    <p class="closing-message">
+                        Feliz cumpleaños, Sandra.
+                        Que la vida siempre encuentre motivos
+                        para hacerte florecer.
+                    </p>
+
+                </div>
+            `;
+
+            createButterflies();
+
+            enterButton.textContent =
+                "El jardín te está esperando 🦋";
+
+            gardenOpened = true;
+
+        }
+
         messageSection.scrollIntoView({
             behavior: "smooth",
             block: "start"
@@ -57,3 +110,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 });
+
