@@ -1,156 +1,250 @@
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta name="description" content="Un pequeño jardín creado con cariño para Sandra.">
-
-    <title>Un jardín llamado tú | Sandra</title>
-
+    <meta name="theme-color" content="#21152f">
+    <title>Un jardín llamado tú</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
+    <header class="portada" id="inicio">
+        <div class="cielo"></div>
+        <div class="mariposa mariposa-1">🦋</div>
+        <div class="mariposa mariposa-2">🦋</div>
+        <div class="portada-contenido">
+            <p class="sobretitulo">Un detalle hecho con cariño</p>
+            <h1>Un jardín<br><span>llamado tú</span></h1>
+            <p class="frase-portada">
+                Hay personas que son como jardines: incluso sin proponérselo,
+                hacen florecer algo bonito en quienes tienen la fortuna de conocerlas.
+            </p>
+            <button class="boton boton-dorado" data-ir="carta">Descubrir mi sorpresa</button>
+        </div>
+        <div class="indicador">Una historia hecha de recuerdos y cariño</div>
+    </header>
+
     <main>
+        <section class="seccion carta" id="carta">
+            <div class="contenedor texto-carta">
+                <p class="sobretitulo">Unas palabras para ti</p>
+                <h2>Para Sandra, en un día especial</h2>
 
-        <!-- PORTADA PRINCIPAL -->
-        <section class="hero" id="inicio">
+                <p>Sandra,</p>
 
-            <div class="stars"></div>
-
-            <div class="hero-content">
-
-                <p class="eyebrow">
-                    UNA PEQUEÑA SORPRESA PARA TI
+                <p>
+                    Hoy quiero celebrar tu vida, esa manera tan tuya de mirar el mundo,
+                    de encontrar belleza en la naturaleza, de emocionarte con los animales,
+                    de enseñar con pasión y de perderte entre libros, investigaciones
+                    y una buena taza de café.
                 </p>
 
-                <h1>
-                    Un jardín
-                    <span>llamado tú</span>
-                </h1>
-
-                <p class="hero-subtitle">
-                    Entre orquídeas, mariposas y atardeceres,
-                    hay personas que merecen ser celebradas.
+                <p>
+                    Admiro esa mujer curiosa, inteligente, fuerte y sensible que eres.
+                    Esa que encuentra motivos para maravillarse con una mariposa,
+                    que disfruta descubrir, aprender y compartir lo que sabe.
+                    Esa que tiene una forma particular de dejar huellas en quienes
+                    tienen la fortuna de coincidir con ella.
                 </p>
 
-                <div class="flower-decoration">
-                    ✿
+                <p>
+                    También quiero aprovechar este día para reconocer que no todo
+                    ha sido perfecto. Sé que he cometido errores y que algunas de
+                    mis acciones pudieron lastimarte. No quiero justificarlos ni
+                    restarles importancia. Quiero reconocerlos con sinceridad,
+                    porque valoro lo que vivimos y porque mereces respeto,
+                    tranquilidad y cariño.
+                </p>
+
+                <p>
+                    Guardo con especial afecto muchos momentos que compartimos:
+                    nuestras conversaciones, las risas, los lugares que descubrimos,
+                    la lluvia en sus diferentes formas de sentirla y esos pequeños
+                    instantes cotidianos que terminaron convirtiéndose en recuerdos
+                    importantes.
+                </p>
+
+                <p class="frase-destacada">
+                    Te quiero, reconozco lo que ha pasado, valoro lo que vivimos
+                    y me gustaría compartir nuevos momentos contigo. Pero respeto
+                    tu libertad, tus decisiones y tus sentimientos.
+                </p>
+
+                <p>
+                    Hoy deseo que la vida te sorprenda con nuevas razones para sonreír,
+                    que nunca pierdas esa curiosidad que te caracteriza y que sigas
+                    encontrando belleza en las cosas pequeñas.
+                </p>
+
+                <p class="despedida-carta">
+                    Feliz cumpleaños, Sandra.<br>
+                    Con mucho cariño.
+                </p>
+
+                <button class="boton" data-ir="violeta">Continuar por el jardín</button>
+            </div>
+        </section>
+
+        <section class="seccion jardin" id="violeta">
+            <div class="contenedor">
+                <p class="sobretitulo">Una flor con nombre propio</p>
+                <h2>El jardín de Violeta</h2>
+                <p class="introduccion">
+                    Algunas flores llegan a nuestra vida y dejan de ser solamente flores.
+                    Violeta tiene una historia, un nombre y un lugar especial en este jardín.
+                </p>
+
+                <div class="flor-central" aria-label="Ilustración decorativa de una flor">
+                    <span>✿</span>
+                    <h3>Violeta</h3>
+                    <p>Una pequeña flor, un recuerdo especial.</p>
                 </div>
 
-                <h2>
-                    Hola, Sandra...
-                </h2>
+                <p class="instruccion">Abre cada flor para descubrir un mensaje.</p>
 
-                <p class="intro-message">
-                    Hoy hay un pequeño jardín que floreció
-                    pensando en ti.
+                <div class="mensajes">
+                    <details>
+                        <summary>Para quien ama la naturaleza</summary>
+                        <p>
+                            Ojalá nunca pierdas esa capacidad de detenerte a contemplar
+                            una flor, seguir el vuelo de una mariposa y encontrar belleza
+                            en los pequeños detalles.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Para la maestra apasionada</summary>
+                        <p>
+                            Que nunca se apague esa curiosidad con la que investigas,
+                            descubres y compartes lo que sabes. Enseñar también es
+                            dejar semillas que florecen con el tiempo.
+                        </p>
+                    </details>
+                    <details>
+                        <summary>Para la mujer que deja huellas</summary>
+                        <p>
+                            Hay personas que nos enseñan a mirar el mundo de otra manera.
+                            Tú tienes esa forma particular de hacerlo, con carácter,
+                            sensibilidad y una curiosidad que inspira.
+                        </p>
+                    </details>
+                </div>
+
+                <button class="boton" data-ir="recuerdos">Visitar nuestros recuerdos</button>
+            </div>
+        </section>
+
+        <section class="seccion recuerdos" id="recuerdos">
+            <div class="contenedor">
+                <p class="sobretitulo">Pequeños instantes, grandes recuerdos</p>
+                <h2>Nuestro pequeño álbum</h2>
+                <p class="introduccion">
+                    Hay momentos que no necesitan fotografías para seguir viviendo
+                    en la memoria.
                 </p>
 
-                <button id="enterGarden" class="main-button">
-                    Descubrir mi sorpresa
-                    <span>🦋</span>
-                </button>
+                <div class="album">
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">♡</span>
+                        <h3>Un primer beso</h3>
+                        <p>Ese instante en el que comenzó a escribirse un recuerdo especial.</p>
+                    </article>
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">☂</span>
+                        <h3>Besos bajo la lluvia</h3>
+                        <p>Porque hasta la lluvia puede convertirse en parte de una historia bonita.</p>
+                    </article>
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">♫</span>
+                        <h3>Música y serenata</h3>
+                        <p>La emoción de escuchar un acordeón y compartir una canción.</p>
+                    </article>
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">🦋</span>
+                        <h3>Un jardín de mariposas</h3>
+                        <p>Aquel recorrido por el mariposario junto a Anto.</p>
+                    </article>
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">☕</span>
+                        <h3>Momentos cotidianos</h3>
+                        <p>Buscar canciones mientras lavabas los platos y convertir lo sencillo en especial.</p>
+                    </article>
+                    <article class="recuerdo">
+                        <span class="icono-recuerdo">✧</span>
+                        <h3>Lugares y conversaciones</h3>
+                        <p>Comidas, cócteles, risas y tantas conversaciones que merecen un lugar en la memoria.</p>
+                    </article>
+                </div>
 
-                <p class="small-note">
-                    He preparado algo especial para ti.
+                <button class="boton" data-ir="musica">Continuar</button>
+            </div>
+        </section>
+
+        <section class="seccion musica" id="musica">
+            <div class="contenedor">
+                <p class="sobretitulo">Hay recuerdos que también suenan</p>
+                <h2>Una voz y una canción</h2>
+                <p class="introduccion">
+                    Algunas palabras se leen; otras merecen escucharse.
+                    Aquí quiero compartir contigo mi voz y una canción especial.
                 </p>
 
+                <div class="audio-panel">
+                    <h3>Un mensaje para ti</h3>
+                    <p>Mi voz, con unas palabras que quiero dedicarte.</p>
+                    <audio controls preload="none">
+                        <source src="audio/voz.mp3" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                    <p class="nota-audio">Archivo: audio/voz.mp3</p>
+                </div>
+
+                <div class="audio-panel">
+                    <h3>Una canción especial</h3>
+                    <p>Un espacio para esa canción que quiero compartir contigo.</p>
+                    <audio controls preload="none">
+                        <source src="audio/cancion.mp3" type="audio/mpeg">
+                        Tu navegador no puede reproducir este audio.
+                    </audio>
+                    <p class="nota-audio">Archivo: audio/cancion.mp3</p>
+                </div>
+
+                <button class="boton" data-ir="final">Llegar al final del jardín</button>
             </div>
+        </section>
 
-            <div class="scroll-indicator">
-                <span>Un pequeño viaje comienza aquí</span>
-                <span>↓</span>
+        <section class="seccion final" id="final">
+            <div class="mariposa mariposa-3">🦋</div>
+            <div class="contenedor">
+                <p class="sobretitulo">Antes de cerrar este jardín</p>
+                <h2>Hay algo que quiero decirte</h2>
+
+                <p class="frase-final">
+                    No hice este jardín para pedirte que regreses, sino para
+                    recordarte que hay personas que, incluso cuando las
+                    circunstancias cambian, siguen mereciendo un lugar bonito
+                    en nuestros pensamientos.
+                </p>
+
+                <p class="invitacion">
+                    Me gustaría que algún día pudiéramos compartir un nuevo momento:
+                    una cena, un paisaje, una conversación o quizá un viaje.
+                    Sin expectativas ni compromisos; simplemente si también nace de ti.
+                </p>
+
+                <p class="cierre">Feliz cumpleaños, Sandra.</p>
+                <p class="firma">Con cariño, siempre.</p>
             </div>
-
         </section>
-
-
-        <!-- AQUÍ CONSTRUIREMOS EL MENSAJE -->
-        <section id="mensaje" class="content-section">
-        </section>
-
-
-        <!-- AQUÍ FLORECERÁ VIOLETA -->
-        <section id="violeta" class="content-section">
-        </section>
-
-
-        <!-- AQUÍ GUARDAREMOS LOS RECUERDOS -->
-        <section id="recuerdos" class="content-section">
-        </section>
-
-
-        <!-- AQUÍ ESTARÁ LA CANCIÓN -->
-        <section id="cancion" class="content-section">
-        </section>
-
-
-        <!-- AQUÍ ESTARÁ LA INVITACIÓN -->
-        <section id="invitacion" class="content-section">
-        </section>
-
     </main>
 
+    <footer>
+        <p>Hecho con cariño, pétalos y recuerdos.</p>
+    </footer>
+
     <script src="script.js"></script>
-
-    <!-- JARDÍN DE VIOLETA -->
-<section id="jardin-violeta" class="seccion-violeta">
-    <div class="contenido-violeta">
-        <p class="etiqueta-seccion">Un pequeño rincón especial</p>
-
-        <h2>El jardín de Violeta</h2>
-
-        <p class="introduccion-violeta">
-            Algunas flores llegan a nuestra vida y dejan de ser solamente flores.
-            Violeta tiene una historia, un nombre y un lugar especial en este jardín.
-        </p>
-
-        <div class="orquidea-violeta">
-            <div class="marco-orquidea">
-                <span class="simbolo-flor">✿</span>
-                <p>Violeta</p>
-                <small>Una flor con nombre propio</small>
-            </div>
-        </div>
-
-        <p class="instruccion-violeta">
-            Hay pequeños mensajes escondidos en este jardín.
-            Abre cada uno y descubre lo que quiero decirte.
-        </p>
-
-        <div class="mensajes-violeta">
-            <details>
-                <summary>Para la mujer que ama la naturaleza</summary>
-                <p>
-                    Ojalá nunca pierdas esa capacidad de detenerte a contemplar
-                    una flor, seguir el vuelo de una mariposa y encontrar belleza
-                    en los pequeños detalles.
-                </p>
-            </details>
-
-            <details>
-                <summary>Para la maestra apasionada</summary>
-                <p>
-                    Que nunca se apague esa curiosidad con la que investigas,
-                    descubres y compartes lo que sabes. Enseñar también es
-                    dejar semillas que florecen con el tiempo.
-                </p>
-            </details>
-
-            <details>
-                <summary>Para la mujer que deja huellas</summary>
-                <p>
-                    Hay personas que nos enseñan a mirar el mundo de otra manera.
-                    Tú tienes esa forma particular de hacerlo, con carácter,
-                    sensibilidad y una curiosidad que inspira.
-                </p>
-            </details>
-        </div>
-    </div>
-</section>
-</body>  
+</body>
 </html>
+
