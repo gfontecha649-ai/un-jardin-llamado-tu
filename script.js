@@ -1,39 +1,70 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const openBtn = document.getElementById('openBtn');
-    const closeBtn = document.getElementById('closeBtn');
-    const cardCover = document.getElementById('cardCover');
-    const cardInside = document.getElementById('cardInside');
-    const petalsContainer = document.getElementById('petals-container');
+    const openSeal = document.getElementById('openSeal');
+    const closeLetter = document.getElementById('closeLetter');
+    const envelopeWrapper = document.getElementById('envelopeWrapper');
+    const letterContainer = document.getElementById('letterContainer');
+    const traitButtons = document.querySelectorAll('.trait-btn');
+    const traitDisplay = document.getElementById('traitDisplay');
+    const ambientCanvas = document.getElementById('ambient-canvas');
 
-    // Abrir la invitación
-    openBtn.addEventListener('click', () => {
-        cardCover.classList.add('hidden');
-        cardInside.classList.remove('hidden');
+    // Mensajes personalizados para cada faceta de su personalidad
+    const traitsMessages = {
+        biologa: "Tienes el don de ver la magia donde otros solo ven hojas o tierra. Entiendes los ciclos de la vida con una sensibilidad que ilumina todo lo que tocas.",
+        fortaleza: "Como las orquídeas que crecen aferradas a lo alto y florecen contra todo pronóstico, tu fuerza ante las dificultades es silenciosa, digna y profundamente admirable.",
+        animales: "Tu empatía por cada animal y ser vivo habla de un corazón noble, incapaz de ser indiferente ante la vulnerabilidad del mundo.",
+        familia: "Eres el refugio y el pilar de los tuyos. Esa entrega incondicional hacia tu familia es una de las cosas más hermosas que definen quién eres."
+    };
+
+    // Abrir el sobre y mostrar la carta
+    openSeal.addEventListener('click', () => {
+        envelopeWrapper.classList.add('hidden');
+        letterContainer.classList.remove('hidden');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // Volver a la portada
-    closeBtn.addEventListener('click', () => {
-        cardInside.classList.add('hidden');
-        cardCover.classList.remove('hidden');
+    // Volver a cerrar el sobre
+    closeLetter.addEventListener('click', () => {
+        letterContainer.classList.add('hidden');
+        envelopeWrapper.classList.remove('hidden');
     });
 
-    // Crear pétalos flotantes sutiles en el fondo
-    function createPetals() {
-        const petalCount = 15;
-        for (let i = 0; i < petalCount; i++) {
-            const petal = document.createElement('div');
-            petal.classList.add('petal');
+    // Interacción con los botones de cualidades
+    traitButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Quitar clase activa a todos
+            traitButtons.forEach(b => b.classList.remove('active'));
+            // Activar el botón presionado
+            btn.classList.add('active');
+
+            const key = btn.getAttribute('data-trait');
             
-            const size = Math.random() * 12 + 8 + 'px';
-            petal.style.width = size;
-            petal.style.height = size;
-            petal.style.left = Math.random() * 100 + 'vw';
-            petal.style.animationDuration = Math.random() * 6 + 6 + 's';
-            petal.style.animationDelay = Math.random() * 5 + 's';
+            // Transición suave del texto
+            traitDisplay.style.opacity = 0;
+            setTimeout(() => {
+                traitDisplay.innerHTML = `<p>${traitsMessages[key]}</p>`;
+                traitDisplay.style.opacity = 1;
+            }, 200);
+        });
+    });
+
+    // Crear efecto de luciérnagas / destellos dorados en el bosque nocturno
+    function createFireflies() {
+        const count = 25;
+        for (let i = 0; i < count; i++) {
+            const firefly = document.createElement('div');
+            firefly.classList.add('firefly');
             
-            petalsContainer.appendChild(petal);
+            const size = Math.random() * 8 + 4 + 'px';
+            firefly.style.width = size;
+            firefly.style.height = size;
+            firefly.style.left = Math.random() * 100 + 'vw';
+            firefly.style.top = Math.random() * 100 + 20 + 'vh';
+            firefly.style.animationDuration = Math.random() * 10 + 8 + 's';
+            firefly.style.animationDelay = Math.random() * 6 + 's';
+            
+            ambientCanvas.appendChild(firefly);
         }
     }
 
-    createPetals();
+    createFireflies();
 });
