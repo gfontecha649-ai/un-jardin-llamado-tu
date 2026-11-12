@@ -1,36 +1,211 @@
+:root {
+    --bg-color: #F4F1EA;
+    --card-bg: #FFFDF9;
+    --primary-green: #3A5A40;
+    --soft-green: #A3B18A;
+    --orchid-purple: #7A4988;
+    --orchid-light: #B583B8;
+    --text-dark: #2B2D2F;
+    --gold-accent: #C5A059;
+}
 
-document.addEventListener("DOMContentLoaded", () => {
-    // Navegación entre las secciones
-    const botones = document.querySelectorAll("[data-ir]");
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-    botones.forEach((boton) => {
-        boton.addEventListener("click", () => {
-            const destino = boton.getAttribute("data-ir");
-            const seccion = document.getElementById(destino);
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #E8ECE6 0%, #F4F1EA 100%);
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+}
 
-            if (seccion) {
-                seccion.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-            }
-        });
-    });
+.card-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(58, 90, 64, 0.15);
+    padding: 25px;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.5s ease;
+}
 
-    // Mensajes del jardín: permite abrir uno a la vez
-    const mensajes = document.querySelectorAll(".mensajes details");
+.botanical-border {
+    border: 2px solid var(--soft-green);
+    border-radius: 12px;
+    padding: 40px 25px;
+    text-align: center;
+    position: relative;
+}
 
-    mensajes.forEach((mensaje) => {
-        mensaje.addEventListener("toggle", () => {
-            if (mensaje.open) {
-                mensajes.forEach((otro) => {
-                    if (otro !== mensaje) {
-                        otro.open = false;
-                    }
-                });
-            }
-        });
-    });
+.subtitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-green);
+    display: block;
+    margin-bottom: 15px;
+}
 
-    console.log("El jardín de Violeta está listo.");
-});
+.orchid-icon {
+    width: 90px;
+    height: 90px;
+    margin: 10px auto 20px;
+    animation: float 4s ease-in-out infinite;
+}
+
+h1, h2 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--primary-green);
+}
+
+h1 {
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.btn-primary, .btn-whatsapp {
+    display: inline-block;
+    background-color: var(--orchid-purple);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-primary:hover, .btn-whatsapp:hover {
+    background-color: #61386D;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--soft-green);
+    color: var(--primary-green);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: var(--soft-green);
+    color: white;
+}
+
+/* Interior de la tarjeta */
+.hidden {
+    display: none;
+}
+
+.card-inside {
+    text-align: center;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+.scientific-note {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--orchid-purple);
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.inside-header h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.dedication {
+    background-color: #F7F5F0;
+    padding: 20px;
+    border-left: 3px solid var(--orchid-light);
+    border-radius: 0 8px 8px 0;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.divider {
+    margin: 15px 0;
+    letter-spacing: 8px;
+    font-size: 1.1rem;
+}
+
+.event-details {
+    text-align: left;
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.detail-item {
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    border-bottom: 1px dashed #DDD;
+    padding-bottom: 8px;
+}
+
+.detail-item strong {
+    color: var(--primary-green);
+    display: inline-block;
+    width: 90px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+}
+
+/* Pétalos flotantes */
+.petal {
+    position: fixed;
+    background-color: var(--orchid-light);
+    border-radius: 150% 0 150% 0;
+    opacity: 0.35;
+    pointer-events: none;
+    z-index: 1;
+    animation: fall linear infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fall {
+    0% { transform: translateY(-10vh) rotate(0deg); }
+    100% { transform: translateY(110vh) rotate(360deg); }
+}
