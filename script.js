@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "El jardín te está esperando 🦋";
 
             gardenOpened = true;
-
+            return;
         }
 
         messageSection.scrollIntoView({
