@@ -3,73 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invitación Especial de Cumpleaños</title>
-    <!-- Fuentes elegantes de Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <title>Para Ti · Feliz Cumpleaños</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="background-petals" id="petals-container"></div>
+    <!-- Partículas de luz y pétalos en el fondo -->
+    <div id="ambient-canvas"></div>
 
-    <main class="card-container">
-        <!-- Portada de la tarjeta -->
-        <div class="card-cover" id="cardCover">
-            <div class="botanical-border">
-                <span class="subtitle">Edición Especial · Naturaleza & Vida</span>
-                <!-- Ilustración SVG de Orquídea -->
-                <svg class="orchid-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M50 15C42 28 35 35 50 50C65 35 58 28 50 15Z" fill="#9B6B9E" opacity="0.8"/>
-                    <path d="M20 45C32 38 42 42 50 50C38 58 28 55 20 45Z" fill="#B583B8" opacity="0.9"/>
-                    <path d="M80 45C68 38 58 42 50 50C62 58 72 55 80 45Z" fill="#B583B8" opacity="0.9"/>
-                    <path d="M30 78C35 65 42 58 50 50C52 65 42 75 30 78Z" fill="#7A4988"/>
-                    <path d="M70 78C65 65 58 58 50 50C48 65 58 75 70 78Z" fill="#7A4988"/>
-                    <circle cx="50" cy="52" r="6" fill="#E6B800"/>
+    <!-- PANTALLA 1: EL SOBRE CERRADO -->
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope">
+            <div class="envelope-flap"></div>
+            <div class="envelope-body">
+                <p class="envelope-label">Un pedacito de bosque y corazón para</p>
+                <h1 class="envelope-name">[Nombre de Ella]</h1>
+                <p class="envelope-date">En su día especial</p>
+            </div>
+            <button class="wax-seal" id="openSeal" aria-label="Abrir carta">
+                <span>Abrir</span>
+            </button>
+        </div>
+        <p class="hint-text">Toca el sello dorado para abrir tu carta</p>
+    </div>
+
+    <!-- PANTALLA 2: LA TARJETA INTERACTIVA -->
+    <main class="letter-container hidden" id="letterContainer">
+        
+        <!-- Encabezado Botánico -->
+        <header class="letter-header">
+            <div class="orchid-illustration">
+                <!-- Ilustración artística de Orquídea -->
+                <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M100 20C82 48 68 65 100 95C132 65 118 48 100 20Z" fill="url(#grad1)"/>
+                    <path d="M35 80C62 65 82 72 100 95C76 112 52 105 35 80Z" fill="url(#grad2)"/>
+                    <path d="M165 80C138 65 118 72 100 95C124 112 148 105 165 80Z" fill="url(#grad2)"/>
+                    <path d="M58 142C68 118 82 106 100 95C104 122 84 140 58 142Z" fill="#6D3B7D"/>
+                    <path d="M142 142C132 118 118 106 100 95C96 122 116 140 142 142Z" fill="#6D3B7D"/>
+                    <!-- Labelo central de la orquídea -->
+                    <path d="M100 88C90 88 86 102 94 112C100 118 100 118 106 112C114 102 110 88 100 88Z" fill="#D4AF37"/>
+                    <circle cx="100" cy="96" r="4" fill="#FFFDF9"/>
+                    <defs>
+                        <linearGradient id="grad1" x1="100" y1="20" x2="100" y2="95" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#C89EC9"/>
+                            <stop offset="1" stop-color="#7A4988"/>
+                        </linearGradient>
+                        <linearGradient id="grad2" x1="35" y1="80" x2="165" y2="95" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#E2C2E3"/>
+                            <stop offset="1" stop-color="#9B6B9E"/>
+                        </linearGradient>
+                    </defs>
                 </svg>
-                <h1>[Nombre de la Cumpleañera]</h1>
-                <p class="tagline">Celebrando la vida, la ciencia y el amor que florece</p>
-                <button id="openBtn" class="btn-primary">Abrir Invitación</button>
             </div>
+            <span class="taxonomy">Especie Única · <em>Anima Fortis & Pulchra</em></span>
+            <h2>Feliz Cumpleaños, [Nombre]</h2>
+        </header>
+
+        <!-- Mensaje Principal desde el Corazón -->
+        <section class="heart-message">
+            <p class="lead">
+                Aunque hoy los kilómetros marquen una distancia física, no existe mapa capaz de alejar lo que significas para mí.
+            </p>
+            <p>
+                Sé que la vida tiene sus curvas y que a veces cometemos errores, pero si hay algo de lo que nunca he dudado es de la mujer extraordinaria que eres. Hoy, que celebras un año más de vida, quería que tuvieras un pedacito de mi cariño guardado aquí, recordándote cuánto te valoro y lo feliz que me hace saber que existes.
+            </p>
+        </section>
+
+        <!-- Sección Interactiva: Pétalos de Admiración -->
+        <section class="admiration-section">
+            <h3>Toca cada esencia para descubrir lo que admiro de ti</h3>
+            <div class="traits-grid">
+                <button class="trait-btn active" data-trait="biologa">🌿 Tu mirada de Bióloga</button>
+                <button class="trait-btn" data-trait="fortaleza">🌺 Tu raíz inquebrantable</button>
+                <button class="trait-btn" data-trait="animales">🦋 Tu ternura por la vida</button>
+                <button class="trait-btn" data-trait="familia">🏡 Tu entrega a los tuyos</button>
+            </div>
+            <div class="trait-display" id="traitDisplay">
+                <p>Tienes el don de ver la magia donde otros solo ven hojas o tierra. Entiendes los ciclos de la vida con una sensibilidad que ilumina todo lo que tocas.</p>
+            </div>
+        </section>
+
+        <!-- Separador Orgánico -->
+        <div class="botanical-divider">
+            <span>✦</span>
         </div>
 
-        <!-- Interior de la tarjeta (Oculto inicialmente) -->
-        <div class="card-inside hidden" id="cardInside">
-            <header class="inside-header">
-                <p class="scientific-note"><em>Phalaenopsis · Símbolo de fortaleza y belleza</em></p>
-                <h2>¡Acompáñanos a celebrar su vida!</h2>
-            </header>
-
-            <section class="dedication">
-                <p>
-                    Como las orquídeas más extraordinarias, floreces con elegancia y fuerza incluso en los terrenos más difíciles. Celebramos tu sensibilidad, tu amor por cada ser vivo de este planeta y esa entrega incondicional que mantiene unida a nuestra familia.
-                </p>
-            </section>
-
-            <div class="divider">🌿 🦋 🌿</div>
-
-            <section class="event-details">
-                <div class="detail-item">
-                    <strong>📅 Fecha:</strong>
-                    <span>[Sábado, 24 de Octubre de 2026]</span>
-                </div>
-                <div class="detail-item">
-                    <strong>⏰ Hora:</strong>
-                    <span>[4:00 PM]</span>
-                </div>
-                <div class="detail-item">
-                    <strong>📍 Lugar:</strong>
-                    <span>[Nombre del lugar o dirección]</span>
-                </div>
-            </section>
-
-            <div class="actions">
-                <!-- Cambia el número de teléfono en el enlace de WhatsApp (ej. 573001234567) -->
-                <a href="https://wa.me/[573000000000]?text=¡Hola!%20Confirmo%20mi%20asistencia%20al%20cumpleaños%20de%20[Nombre]." target="_blank" class="btn-whatsapp">
-                    Confirmar Asistencia
-                </a>
-                <button id="closeBtn" class="btn-secondary">Volver a la portada</button>
+        <!-- Detalles de la Celebración (Opcional si hay reunión o para brindar a la distancia) -->
+        <section class="celebration-box">
+            <h3>Un brindis por tu vida</h3>
+            <p class="celebration-note">
+                Que este nuevo ciclo florezca para ti con la misma belleza y resiliencia de tus orquídeas favoritas.
+            </p>
+            <div class="date-badge">
+                <span>📅 [Fecha de su Cumpleaños, ej: 15 de Noviembre]</span>
             </div>
-        </div>
+        </section>
+
+        <!-- Pie de carta y botón de respuesta -->
+        <footer class="letter-footer">
+            <p class="signature">Con todo mi cariño y admiración,<br><strong>[Tu Nombre]</strong></p>
+            
+            <!-- Botón opcional para que te envíe un mensaje si lo desea -->
+            <a href="https://wa.me/[TuNumeroConCodigoPais]?text=Hola,%20acabo%20de%20abrir%20la%20tarjeta%20que%20me%20hiciste..." target="_blank" class="btn-reply">
+                Enviar un abrazo de vuelta ✨
+            </a>
+            <button id="closeLetter" class="btn-minimal">Volver a guardar en el sobre</button>
+        </footer>
+
     </main>
 
     <script src="script.js"></script>
