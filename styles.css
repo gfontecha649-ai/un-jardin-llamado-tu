@@ -1,487 +1,458 @@
 
-/* =========================================
-   UN JARDÍN LLAMADO TÚ
-   Diseño visual para Sandra
-   ========================================= */
-
-/* 1. CONFIGURACIÓN GENERAL */
-
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 :root {
-    --violet-dark: #21152f;
-    --violet: #684477;
-    --violet-light: #b58acb;
-    --pink: #e9b6d0;
-    --gold: #e6c58d;
-    --cream: #fff6ec;
-    --text-light: #f8eefa;
+    --fondo: #21152f;
+    --fondo-claro: #30203f;
+    --dorado: #d9b978;
+    --lavanda: #d8c4e8;
+    --texto: #f8f2f7;
+    --suave: #d9ccdf;
 }
 
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 20px;
 }
 
 body {
+    background: var(--fondo);
+    color: var(--texto);
     font-family: 'Montserrat', sans-serif;
-    background: var(--violet-dark);
-    color: var(--text-light);
-    overflow-x: hidden;
+    line-height: 1.8;
 }
 
+button {
+    font: inherit;
+}
 
-/* 2. PORTADA PRINCIPAL */
-
-.hero {
-    position: relative;
+.portada {
     min-height: 100vh;
     min-height: 100svh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 70px 24px 100px;
     overflow: hidden;
-
+    text-align: center;
+    padding: 50px 22px;
     background:
-        radial-gradient(
-            ellipse at 50% 85%,
-            rgba(219, 143, 177, 0.38),
-            transparent 45%
-        ),
-        radial-gradient(
-            ellipse at 15% 20%,
-            rgba(112, 75, 144, 0.45),
-            transparent 45%
-        ),
-        linear-gradient(
-            160deg,
-            #171326 0%,
-            #382344 45%,
-            #79516e 75%,
-            #d28c91 100%
-        );
+        radial-gradient(ellipse at 50% 100%, #a36a70 0%, transparent 43%),
+        linear-gradient(180deg, #171426 0%, #49304f 58%, #a46c70 100%);
 }
 
-
-/* 3. ESTRELLAS DEL CIELO */
-
-.stars {
+.cielo {
     position: absolute;
     inset: 0;
-    pointer-events: none;
-
-    background-image:
-        radial-gradient(2px 2px at 15% 20%, #fff 98%, transparent),
-        radial-gradient(2px 2px at 75% 15%, #fff0c9 98%, transparent),
-        radial-gradient(1px 1px at 40% 35%, #fff 98%, transparent),
-        radial-gradient(2px 2px at 85% 55%, #fff 98%, transparent),
-        radial-gradient(1px 1px at 25% 65%, #fff0c9 98%, transparent),
-        radial-gradient(2px 2px at 60% 75%, #fff 98%, transparent),
-        radial-gradient(1px 1px at 90% 30%, #fff 98%, transparent),
-        radial-gradient(2px 2px at 8% 80%, #fff 98%, transparent);
-
-    background-size: 100% 100%;
-    animation: twinkle 5s ease-in-out infinite alternate;
+    opacity: .35;
+    background:
+        radial-gradient(ellipse at 15% 80%, #e9b88b 0%, transparent 25%),
+        radial-gradient(ellipse at 85% 70%, #e9b88b 0%, transparent 25%);
 }
 
-@keyframes twinkle {
-    from {
-        opacity: 0.35;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-
-/* 4. CONTENIDO DE LA PORTADA */
-
-.hero-content {
+.portada-contenido {
     position: relative;
     z-index: 2;
-    width: 100%;
-    max-width: 780px;
-
-    animation: appear 1.8s ease both;
+    max-width: 760px;
 }
 
-@keyframes appear {
-    from {
-        opacity: 0;
-        transform: translateY(25px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.sobretitulo {
+    color: var(--dorado);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: .72rem;
+    margin-bottom: 18px;
 }
 
-.eyebrow {
-    color: var(--gold);
-    font-size: 0.68rem;
-    letter-spacing: 5px;
+.portada h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.8rem, 10vw, 7.5rem);
+    line-height: .92;
     font-weight: 500;
-    margin-bottom: 30px;
+    margin-bottom: 28px;
 }
 
-.hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.8rem, 9vw, 7rem);
-    font-weight: 400;
-    line-height: 0.95;
-    color: var(--cream);
-    text-shadow: 0 5px 35px rgba(0, 0, 0, 0.2);
-}
-
-.hero h1 span {
-    display: block;
-    color: #edc4d9;
+.portada h1 span {
+    color: var(--dorado);
     font-style: italic;
-    margin-top: 12px;
 }
 
-.hero-subtitle {
-    max-width: 540px;
-    margin: 30px auto;
-    color: #f3ddea;
-    font-size: 0.92rem;
-    line-height: 1.9;
-    font-weight: 300;
+.frase-portada {
+    max-width: 590px;
+    margin: 0 auto 35px;
+    color: #f5eaf0;
+    font-size: 1rem;
 }
 
-.flower-decoration {
-    color: var(--gold);
-    font-size: 3rem;
-    margin: 20px 0;
-    animation: flowerFloat 4s ease-in-out infinite;
-}
-
-@keyframes flowerFloat {
-    0%, 100% {
-        transform: translateY(0) rotate(-5deg);
-    }
-
-    50% {
-        transform: translateY(-12px) rotate(5deg);
-    }
-}
-
-.hero h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.5rem;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 10px;
-}
-
-.intro-message {
-    color: #f5d8e7;
-    font-size: 0.9rem;
-    line-height: 1.8;
-    margin-bottom: 35px;
-}
-
-
-/* 5. BOTÓN PRINCIPAL */
-
-.main-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-
-    padding: 16px 30px;
-    border: 1px solid rgba(255, 224, 190, 0.7);
-    border-radius: 50px;
-
-    background: linear-gradient(
-        135deg,
-        #b98aaf,
-        #805b91
-    );
-
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.82rem;
-    letter-spacing: 0.5px;
-
+.boton {
+    display: inline-block;
+    border: 1px solid var(--dorado);
+    color: var(--dorado);
+    background: transparent;
+    padding: 13px 25px;
+    border-radius: 30px;
     cursor: pointer;
-
-    box-shadow: 0 8px 30px rgba(20, 10, 30, 0.25);
-
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                background 0.3s ease;
+    margin-top: 28px;
+    transition: .3s ease;
 }
 
-.main-button:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 35px rgba(20, 10, 30, 0.4);
-
-    background: linear-gradient(
-        135deg,
-        #d2a5c5,
-        #966eaa
-    );
+.boton:hover {
+    background: var(--dorado);
+    color: #24172e;
+    transform: translateY(-3px);
 }
 
-.main-button span {
-    font-size: 1.1rem;
+.boton-dorado {
+    background: var(--dorado);
+    color: #24172e;
+    font-weight: 600;
 }
 
-.small-note {
-    color: rgba(255, 240, 248, 0.7);
-    font-size: 0.7rem;
-    margin-top: 22px;
-    letter-spacing: 1px;
+.boton-dorado:hover {
+    background: #f0d9a8;
 }
 
-
-/* 6. INDICADOR DE DESPLAZAMIENTO */
-
-.scroll-indicator {
+.indicador {
     position: absolute;
     bottom: 25px;
-    left: 0;
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-
-    color: rgba(255, 239, 248, 0.7);
-    font-size: 0.65rem;
+    left: 10px;
+    right: 10px;
+    color: #ead9e7;
+    font-size: .7rem;
     letter-spacing: 2px;
 }
 
-.scroll-indicator span:last-child {
-    font-size: 1.3rem;
-    animation: arrowDown 1.5s infinite;
-}
-
-@keyframes arrowDown {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(7px);
-    }
-}
-
-
-/* 7. SECCIONES QUE CONSTRUIREMOS */
-
-.content-section {
-    position: relative;
-    min-height: 30vh;
-    padding: 70px 24px;
-    background: var(--violet-dark);
-}
-
-
-/* 8. ADAPTACIÓN A CELULARES */
-
-@media (max-width: 600px) {
-
-    .hero {
-        padding: 55px 20px 90px;
-    }
-
-    .eyebrow {
-        font-size: 0.58rem;
-        letter-spacing: 3px;
-    }
-
-    .hero-subtitle {
-        font-size: 0.82rem;
-    }
-
-    .hero h2 {
-        font-size: 2.1rem;
-    }
-
-    .intro-message {
-        font-size: 0.82rem;
-    }
-
-    .main-button {
-        padding: 15px 24px;
-        font-size: 0.75rem;
-    }
-
-    .scroll-indicator {
-        font-size: 0.58rem;
-    }
-}
-
-
-/* 9. ACCESIBILIDAD: MOVIMIENTO REDUCIDO */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-    }
-}
-.content-section:empty {
-    display: none;
-}
-
-/* =================================
-   MARIPOSAS DEL JARDÍN
-   ================================= */
-
-.butterfly {
+.mariposa {
     position: absolute;
-    z-index: 5;
-    left: var(--start-left);
-    bottom: -60px;
-    font-size: var(--butterfly-size, 24px);
-    opacity: 0;
-    pointer-events: none;
-    animation: butterfly-flight var(--flight-duration, 14s) linear infinite;
-    animation-delay: var(--flight-delay, 0s);
+    z-index: 1;
+    font-size: 2rem;
+    animation: vuelo 9s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 8px #f4d8a2);
 }
 
-@keyframes butterfly-flight {
-    0% {
-        transform: translate(0, 0) rotate(-15deg);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.9;
-    }
-
-    50% {
-        transform: translate(45px, -50vh) rotate(15deg);
-        opacity: 1;
-    }
-
-    90% {
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translate(-25px, -110vh) rotate(-10deg);
-        opacity: 0;
-    }
+.mariposa-1 {
+    left: 12%;
+    top: 25%;
 }
 
-/* Evitamos animaciones si el visitante lo prefiere */
-@media (prefers-reduced-motion: reduce) {
-    .butterfly {
-        animation: none;
-        display: none;
-    }
+.mariposa-2 {
+    right: 13%;
+    bottom: 25%;
+    animation-delay: -4s;
+    font-size: 1.5rem;
 }
 
+.mariposa-3 {
+    right: 12%;
+    top: 12%;
+}
 
-/* =====================================
-   MARIPOSAS ELEGANTES DEL JARDIN
-===================================== */
+@keyframes vuelo {
+    0% { transform: translate(0, 0) rotate(-12deg); }
+    50% { transform: translate(35px, -25px) rotate(12deg); }
+    100% { transform: translate(-15px, 20px) rotate(-8deg); }
+}
 
-#inicio {
+.seccion {
+    padding: 100px 22px;
+    text-align: center;
     position: relative;
     overflow: hidden;
-    isolation: isolate;
 }
 
-.butterfly {
-    position: absolute;
-    z-index: 2;
-    width: 48px;
-    height: 38px;
-    pointer-events: none;
-    perspective: 500px;
-    animation: butterflyFlight var(--duration, 16s)
-        ease-in-out var(--delay, 0s) infinite alternate;
+.contenedor {
+    width: min(900px, 100%);
+    margin: 0 auto;
 }
 
-.butterfly .wing {
-    position: absolute;
-    top: 3px;
-    width: 23px;
-    height: 30px;
-    background: linear-gradient(
-        145deg,
-        #f3d9ff,
-        #a66acb 55%,
-        #63317f
-    );
-    border: 1px solid rgba(255, 224, 255, .8);
-    box-shadow: 0 0 8px rgba(218, 166, 255, .35);
+.seccion h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.7rem, 6vw, 4.4rem);
+    line-height: 1.1;
+    font-weight: 500;
+    color: var(--dorado);
+    margin-bottom: 25px;
 }
 
-.butterfly .wing-left {
-    left: 1px;
-    border-radius: 85% 15% 75% 25%;
-    transform-origin: right center;
-    animation: leftFlap .65s ease-in-out infinite alternate;
+.carta {
+    background: linear-gradient(145deg, #281b37, #35213e);
 }
 
-.butterfly .wing-right {
-    right: 1px;
-    border-radius: 15% 85% 25% 75%;
-    transform-origin: left center;
-    animation: rightFlap .65s ease-in-out infinite alternate;
+.texto-carta {
+    max-width: 760px;
+    text-align: left;
 }
 
-.butterfly .body {
-    position: absolute;
-    width: 3px;
-    height: 23px;
-    left: 22px;
-    top: 9px;
-    border-radius: 50%;
-    background: #38203f;
-    z-index: 3;
+.texto-carta h2 {
+    text-align: center;
+    margin-bottom: 45px;
 }
 
-@keyframes leftFlap {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(-65deg); }
+.texto-carta p {
+    margin-bottom: 22px;
+    color: var(--suave);
 }
 
-@keyframes rightFlap {
-    from { transform: rotateY(0deg); }
-    to { transform: rotateY(65deg); }
+.texto-carta > p:first-of-type {
+    color: var(--dorado);
 }
 
-@keyframes butterflyFlight {
-    0% {
-        transform: translate(0, 0) rotate(-8deg);
+.frase-destacada {
+    border-left: 2px solid var(--dorado);
+    padding: 12px 20px;
+    color: #f4dfbd !important;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+.despedida-carta {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    color: var(--dorado) !important;
+}
+
+.texto-carta .boton {
+    display: block;
+    margin: 35px auto 0;
+}
+
+.jardin {
+    background:
+        radial-gradient(ellipse at center, #49314c 0%, #261a35 75%);
+}
+
+.introduccion {
+    max-width: 650px;
+    margin: 0 auto 38px;
+    color: var(--suave);
+}
+
+.flor-central {
+    width: min(310px, 90%);
+    margin: 35px auto;
+    padding: 40px 20px;
+    border: 1px solid rgba(217, 185, 120, .55);
+    border-radius: 180px 180px 35px 35px;
+    background: linear-gradient(160deg, #513750, #2a1c39);
+    box-shadow: 0 15px 55px #130e20;
+}
+
+.flor-central span {
+    display: block;
+    color: #e8c7d8;
+    font-size: 6rem;
+    line-height: 1.3;
+    text-shadow: 0 0 25px #d9b978;
+}
+
+.flor-central h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dorado);
+    font-size: 2.5rem;
+    font-weight: 500;
+}
+
+.flor-central p {
+    color: var(--suave);
+    font-size: .85rem;
+}
+
+.instruccion {
+    color: var(--dorado);
+    margin: 25px 0;
+}
+
+.mensajes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    text-align: left;
+    margin: 30px 0;
+}
+
+.mensajes details {
+    border: 1px solid #765b79;
+    background: rgba(255,255,255,.04);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.mensajes summary {
+    color: var(--dorado);
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.mensajes details p {
+    color: var(--suave);
+    font-size: .9rem;
+    margin-top: 15px;
+}
+
+.recuerdos {
+    background: #24192f;
+}
+
+.album {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 40px;
+}
+
+.recuerdo {
+    min-height: 210px;
+    padding: 28px 20px;
+    border: 1px solid rgba(217,185,120,.35);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #3c2a46, #2b1e38);
+    transition: transform .3s ease, border-color .3s ease;
+}
+
+.recuerdo:hover {
+    transform: translateY(-6px);
+    border-color: var(--dorado);
+}
+
+.icono-recuerdo {
+    color: var(--dorado);
+    font-size: 2rem;
+}
+
+.recuerdo h3 {
+    color: #f0d9ad;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+.recuerdo p {
+    color: var(--suave);
+    font-size: .85rem;
+}
+
+.musica {
+    background: linear-gradient(160deg, #352440, #21152f);
+}
+
+.audio-panel {
+    max-width: 600px;
+    margin: 22px auto;
+    padding: 28px;
+    border: 1px solid rgba(217,185,120,.45);
+    border-radius: 15px;
+    background: rgba(255,255,255,.04);
+}
+
+.audio-panel h3 {
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--dorado);
+    font-size: 1.8rem;
+}
+
+.audio-panel p {
+    color: var(--suave);
+    margin: 8px 0 18px;
+}
+
+.audio-panel audio {
+    width: 100%;
+    height: 42px;
+}
+
+.nota-audio {
+    font-size: .72rem;
+    opacity: .7;
+    margin-bottom: 0 !important;
+}
+
+.final {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(ellipse at 50% 100%, #9b666c 0%, transparent 45%),
+        linear-gradient(180deg, #21152f, #49304f);
+}
+
+.frase-final {
+    max-width: 720px;
+    margin: 35px auto;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-style: italic;
+    color: #f4dfbd;
+    line-height: 1.5;
+}
+
+.invitacion {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--suave);
+}
+
+.cierre {
+    margin-top: 45px;
+    color: var(--dorado);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.3rem;
+}
+
+.firma {
+    color: var(--suave);
+    font-style: italic;
+}
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: #171020;
+    color: #b9a9bd;
+    font-size: .75rem;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+    .seccion {
+        padding: 75px 20px;
     }
-    35% {
-        transform: translate(35px, -22px) rotate(8deg);
+
+    .mensajes,
+    .album {
+        grid-template-columns: 1fr;
     }
-    70% {
-        transform: translate(-15px, 18px) rotate(-5deg);
+
+    .recuerdo {
+        min-height: auto;
     }
-    100% {
-        transform: translate(45px, -12px) rotate(10deg);
+
+    .portada h1 {
+        font-size: clamp(3.5rem, 17vw, 5.5rem);
+    }
+
+    .mariposa-1 {
+        left: 5%;
+        top: 12%;
+    }
+
+    .mariposa-2 {
+        right: 5%;
+        bottom: 12%;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .butterfly,
-    .butterfly .wing {
-        animation: none;
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
     }
 }
