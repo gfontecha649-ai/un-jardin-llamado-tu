@@ -11,41 +11,14 @@
 
     <div id="ambient-canvas"></div>
 
-    <!-- PANTALLA 1: EL SOBRE CERRADO CON MARIPOSA MONARCA -->
+    <!-- PANTALLA 1: EL SOBRE CERRADO -->
     <div class="envelope-wrapper" id="envelopeWrapper">
         <div class="envelope">
             <div class="envelope-flap"></div>
             
-            <!-- Broche de Mariposa Monarca Animada -->
-            <button type="button" class="butterfly-clasp" id="openSeal" onclick="abrirCarta()" aria-label="Abrir carta">
-                <svg class="monarch-svg" width="96" height="80" viewBox="0 0 120 100" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Ala Izquierda -->
-                    <g class="wing-left">
-                        <path d="M58 48 C40 15, 5 12, 10 42 C14 60, 42 56, 58 52 Z" fill="#F37021" stroke="#1A1412" stroke-width="3.5"/>
-                        <path d="M58 53 C38 56, 16 70, 26 86 C35 96, 52 82, 58 62 Z" fill="#E85D10" stroke="#1A1412" stroke-width="3.5"/>
-                        <path d="M56 49 L20 30 M55 51 L18 45 M56 56 L32 78" stroke="#1A1412" stroke-width="2"/>
-                        <circle cx="15" cy="28" r="1.8" fill="#FFFDF9"/>
-                        <circle cx="13" cy="36" r="1.5" fill="#FFFDF9"/>
-                        <circle cx="28" cy="83" r="1.5" fill="#FFFDF9"/>
-                    </g>
-
-                    <!-- Ala Derecha -->
-                    <g class="wing-right">
-                        <path d="M62 48 C80 15, 115 12, 110 42 C106 60, 78 56, 62 52 Z" fill="#F37021" stroke="#1A1412" stroke-width="3.5"/>
-                        <path d="M62 53 C82 56, 104 70, 94 86 C85 96, 68 82, 62 62 Z" fill="#E85D10" stroke="#1A1412" stroke-width="3.5"/>
-                        <path d="M64 49 L100 30 M65 51 L102 45 M64 56 L88 78" stroke="#1A1412" stroke-width="2"/>
-                        <circle cx="105" cy="28" r="1.8" fill="#FFFDF9"/>
-                        <circle cx="107" cy="36" r="1.5" fill="#FFFDF9"/>
-                        <circle cx="92" cy="83" r="1.5" fill="#FFFDF9"/>
-                    </g>
-
-                    <!-- Cuerpo y antenas -->
-                    <ellipse cx="60" cy="54" rx="3" ry="16" fill="#1A1412"/>
-                    <circle cx="60" cy="36" r="3.2" fill="#1A1412"/>
-                    <path d="M58 34 Q52 22 46 20" stroke="#1A1412" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-                    <path d="M62 34 Q68 22 74 20" stroke="#1A1412" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-                </svg>
-                <span class="clasp-text">Abrir</span>
+            <!-- Sello de Cera Dorado -->
+            <button type="button" class="wax-seal" id="openSeal" onclick="abrirCarta()" aria-label="Abrir carta">
+                <span>Abrir</span>
             </button>
 
             <div class="envelope-body">
@@ -54,7 +27,7 @@
                 <p class="envelope-date">En su día especial</p>
             </div>
         </div>
-        <p class="hint-text">Toca la mariposa para abrir tu carta</p>
+        <p class="hint-text">Toca el sello dorado para abrir tu carta</p>
     </div>
 
     <!-- PANTALLA 2: LA TARJETA INTERACTIVA -->
