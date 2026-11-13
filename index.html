@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Ti · Feliz Cumpleaños</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <!-- Enlace exacto a tu archivo styles.css -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -16,8 +17,8 @@
         <div class="envelope">
             <div class="envelope-flap"></div>
             
-            <!-- Sello de Cera Dorado (Ahora bien posicionado y totalmente cliqueable) -->
-            <button type="button" class="wax-seal" id="openSeal" aria-label="Abrir carta">
+            <!-- Sello de Cera Dorado -->
+            <button type="button" class="wax-seal" id="openSeal" onclick="abrirCarta()" aria-label="Abrir carta">
                 <span>Abrir</span>
             </button>
 
@@ -35,17 +36,12 @@
         
         <header class="letter-header">
             <div class="orchid-illustration">
-                <!-- Ilustración de Orquídea con colores sólidos y dorados bien visibles -->
                 <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Pétalo superior -->
                     <path d="M100 18C80 48 66 66 100 96C134 66 120 48 100 18Z" fill="#9B6B9E"/>
-                    <!-- Pétalos laterales -->
                     <path d="M32 80C60 64 82 72 100 96C74 114 50 106 32 80Z" fill="#C89EC9"/>
                     <path d="M168 80C140 64 118 72 100 96C126 114 150 106 168 80Z" fill="#C89EC9"/>
-                    <!-- Sépalos inferiores -->
                     <path d="M56 144C66 118 82 106 100 96C104 124 84 142 56 144Z" fill="#6D3B7D"/>
                     <path d="M144 144C134 118 118 106 100 96C96 124 116 142 144 144Z" fill="#6D3B7D"/>
-                    <!-- Centro / Labelo Dorado bien definido -->
                     <path d="M100 84C87 84 82 101 92 114C100 122 100 122 108 114C118 101 113 84 100 84Z" fill="#D4AF37" stroke="#A8843E" stroke-width="2"/>
                     <circle cx="100" cy="95" r="5" fill="#FFFDF9"/>
                 </svg>
@@ -63,21 +59,20 @@
             </p>
         </section>
 
-        <!-- Botones mejorados con diseño de cápsula botánica -->
         <section class="admiration-section">
             <h3>Toca cada esencia para descubrir lo que admiro de ti</h3>
             <div class="traits-grid">
-                <button type="button" class="trait-btn active" data-trait="biologa">
-                    <span class="btn-icon">🌿</span> Tu mirada de Bióloga
+                <button type="button" class="trait-btn active" onclick="mostrarCualidad('biologa', this)">
+                    <span>🌿</span> Tu mirada de Bióloga
                 </button>
-                <button type="button" class="trait-btn" data-trait="fortaleza">
-                    <span class="btn-icon">🌺</span> Tu raíz inquebrantable
+                <button type="button" class="trait-btn" onclick="mostrarCualidad('fortaleza', this)">
+                    <span>🌺</span> Tu raíz inquebrantable
                 </button>
-                <button type="button" class="trait-btn" data-trait="animales">
-                    <span class="btn-icon">🦋</span> Tu ternura por la vida
+                <button type="button" class="trait-btn" onclick="mostrarCualidad('animales', this)">
+                    <span>🦋</span> Tu ternura por la vida
                 </button>
-                <button type="button" class="trait-btn" data-trait="familia">
-                    <span class="btn-icon">🏡</span> Tu entrega a los tuyos
+                <button type="button" class="trait-btn" onclick="mostrarCualidad('familia', this)">
+                    <span>🏡</span> Tu entrega a los tuyos
                 </button>
             </div>
             <div class="trait-display" id="traitDisplay">
@@ -105,11 +100,12 @@
             <a href="https://wa.me/[573000000000]?text=Hola,%20acabo%20de%20abrir%20la%20tarjeta%20que%20me%20hiciste..." target="_blank" class="btn-reply">
                 Enviar un abrazo de vuelta ✨
             </a>
-            <button type="button" id="closeLetter" class="btn-minimal">Volver a guardar en el sobre</button>
+            <button type="button" onclick="cerrarCarta()" class="btn-minimal">Volver a guardar en el sobre</button>
         </footer>
 
     </main>
 
+    <!-- Enlace exacto a tu archivo script.js -->
     <script src="script.js"></script>
 </body>
 </html>
