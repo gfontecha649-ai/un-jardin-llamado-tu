@@ -4,26 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Para Ti · Feliz Cumpleaños</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,400;1,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Partículas de luz y pétalos en el fondo -->
     <div id="ambient-canvas"></div>
 
     <!-- PANTALLA 1: EL SOBRE CERRADO -->
     <div class="envelope-wrapper" id="envelopeWrapper">
         <div class="envelope">
             <div class="envelope-flap"></div>
+            
+            <!-- Sello de Cera Dorado (Ahora bien posicionado y totalmente cliqueable) -->
+            <button type="button" class="wax-seal" id="openSeal" aria-label="Abrir carta">
+                <span>Abrir</span>
+            </button>
+
             <div class="envelope-body">
                 <p class="envelope-label">Un pedacito de bosque y corazón para</p>
                 <h1 class="envelope-name">[Nombre de Ella]</h1>
                 <p class="envelope-date">En su día especial</p>
             </div>
-            <button class="wax-seal" id="openSeal" aria-label="Abrir carta">
-                <span>Abrir</span>
-            </button>
         </div>
         <p class="hint-text">Toca el sello dorado para abrir tu carta</p>
     </div>
@@ -31,36 +33,27 @@
     <!-- PANTALLA 2: LA TARJETA INTERACTIVA -->
     <main class="letter-container hidden" id="letterContainer">
         
-        <!-- Encabezado Botánico -->
         <header class="letter-header">
             <div class="orchid-illustration">
-                <!-- Ilustración artística de Orquídea -->
+                <!-- Ilustración de Orquídea con colores sólidos y dorados bien visibles -->
                 <svg viewBox="0 0 200 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M100 20C82 48 68 65 100 95C132 65 118 48 100 20Z" fill="url(#grad1)"/>
-                    <path d="M35 80C62 65 82 72 100 95C76 112 52 105 35 80Z" fill="url(#grad2)"/>
-                    <path d="M165 80C138 65 118 72 100 95C124 112 148 105 165 80Z" fill="url(#grad2)"/>
-                    <path d="M58 142C68 118 82 106 100 95C104 122 84 140 58 142Z" fill="#6D3B7D"/>
-                    <path d="M142 142C132 118 118 106 100 95C96 122 116 140 142 142Z" fill="#6D3B7D"/>
-                    <!-- Labelo central de la orquídea -->
-                    <path d="M100 88C90 88 86 102 94 112C100 118 100 118 106 112C114 102 110 88 100 88Z" fill="#D4AF37"/>
-                    <circle cx="100" cy="96" r="4" fill="#FFFDF9"/>
-                    <defs>
-                        <linearGradient id="grad1" x1="100" y1="20" x2="100" y2="95" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#C89EC9"/>
-                            <stop offset="1" stop-color="#7A4988"/>
-                        </linearGradient>
-                        <linearGradient id="grad2" x1="35" y1="80" x2="165" y2="95" gradientUnits="userSpaceOnUse">
-                            <stop stop-color="#E2C2E3"/>
-                            <stop offset="1" stop-color="#9B6B9E"/>
-                        </linearGradient>
-                    </defs>
+                    <!-- Pétalo superior -->
+                    <path d="M100 18C80 48 66 66 100 96C134 66 120 48 100 18Z" fill="#9B6B9E"/>
+                    <!-- Pétalos laterales -->
+                    <path d="M32 80C60 64 82 72 100 96C74 114 50 106 32 80Z" fill="#C89EC9"/>
+                    <path d="M168 80C140 64 118 72 100 96C126 114 150 106 168 80Z" fill="#C89EC9"/>
+                    <!-- Sépalos inferiores -->
+                    <path d="M56 144C66 118 82 106 100 96C104 124 84 142 56 144Z" fill="#6D3B7D"/>
+                    <path d="M144 144C134 118 118 106 100 96C96 124 116 142 144 144Z" fill="#6D3B7D"/>
+                    <!-- Centro / Labelo Dorado bien definido -->
+                    <path d="M100 84C87 84 82 101 92 114C100 122 100 122 108 114C118 101 113 84 100 84Z" fill="#D4AF37" stroke="#A8843E" stroke-width="2"/>
+                    <circle cx="100" cy="95" r="5" fill="#FFFDF9"/>
                 </svg>
             </div>
             <span class="taxonomy">Especie Única · <em>Anima Fortis & Pulchra</em></span>
             <h2>Feliz Cumpleaños, [Nombre]</h2>
         </header>
 
-        <!-- Mensaje Principal desde el Corazón -->
         <section class="heart-message">
             <p class="lead">
                 Aunque hoy los kilómetros marquen una distancia física, no existe mapa capaz de alejar lo que significas para mí.
@@ -70,26 +63,32 @@
             </p>
         </section>
 
-        <!-- Sección Interactiva: Pétalos de Admiración -->
+        <!-- Botones mejorados con diseño de cápsula botánica -->
         <section class="admiration-section">
             <h3>Toca cada esencia para descubrir lo que admiro de ti</h3>
             <div class="traits-grid">
-                <button class="trait-btn active" data-trait="biologa">🌿 Tu mirada de Bióloga</button>
-                <button class="trait-btn" data-trait="fortaleza">🌺 Tu raíz inquebrantable</button>
-                <button class="trait-btn" data-trait="animales">🦋 Tu ternura por la vida</button>
-                <button class="trait-btn" data-trait="familia">🏡 Tu entrega a los tuyos</button>
+                <button type="button" class="trait-btn active" data-trait="biologa">
+                    <span class="btn-icon">🌿</span> Tu mirada de Bióloga
+                </button>
+                <button type="button" class="trait-btn" data-trait="fortaleza">
+                    <span class="btn-icon">🌺</span> Tu raíz inquebrantable
+                </button>
+                <button type="button" class="trait-btn" data-trait="animales">
+                    <span class="btn-icon">🦋</span> Tu ternura por la vida
+                </button>
+                <button type="button" class="trait-btn" data-trait="familia">
+                    <span class="btn-icon">🏡</span> Tu entrega a los tuyos
+                </button>
             </div>
             <div class="trait-display" id="traitDisplay">
                 <p>Tienes el don de ver la magia donde otros solo ven hojas o tierra. Entiendes los ciclos de la vida con una sensibilidad que ilumina todo lo que tocas.</p>
             </div>
         </section>
 
-        <!-- Separador Orgánico -->
         <div class="botanical-divider">
             <span>✦</span>
         </div>
 
-        <!-- Detalles de la Celebración (Opcional si hay reunión o para brindar a la distancia) -->
         <section class="celebration-box">
             <h3>Un brindis por tu vida</h3>
             <p class="celebration-note">
@@ -100,15 +99,13 @@
             </div>
         </section>
 
-        <!-- Pie de carta y botón de respuesta -->
         <footer class="letter-footer">
             <p class="signature">Con todo mi cariño y admiración,<br><strong>[Tu Nombre]</strong></p>
             
-            <!-- Botón opcional para que te envíe un mensaje si lo desea -->
-            <a href="https://wa.me/[TuNumeroConCodigoPais]?text=Hola,%20acabo%20de%20abrir%20la%20tarjeta%20que%20me%20hiciste..." target="_blank" class="btn-reply">
+            <a href="https://wa.me/[573000000000]?text=Hola,%20acabo%20de%20abrir%20la%20tarjeta%20que%20me%20hiciste..." target="_blank" class="btn-reply">
                 Enviar un abrazo de vuelta ✨
             </a>
-            <button id="closeLetter" class="btn-minimal">Volver a guardar en el sobre</button>
+            <button type="button" id="closeLetter" class="btn-minimal">Volver a guardar en el sobre</button>
         </footer>
 
     </main>
