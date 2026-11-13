@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const traitDisplay = document.getElementById('traitDisplay');
     const ambientCanvas = document.getElementById('ambient-canvas');
 
-    // Mensajes personalizados para cada faceta de su personalidad
     const traitsMessages = {
         biologa: "Tienes el don de ver la magia donde otros solo ven hojas o tierra. Entiendes los ciclos de la vida con una sensibilidad que ilumina todo lo que tocas.",
         fortaleza: "Como las orquídeas que crecen aferradas a lo alto y florecen contra todo pronóstico, tu fuerza ante las dificultades es silenciosa, digna y profundamente admirable.",
@@ -15,39 +14,39 @@ document.addEventListener('DOMContentLoaded', () => {
         familia: "Eres el refugio y el pilar de los tuyos. Esa entrega incondicional hacia tu familia es una de las cosas más hermosas que definen quién eres."
     };
 
-    // Abrir el sobre y mostrar la carta
-    openSeal.addEventListener('click', () => {
-        envelopeWrapper.classList.add('hidden');
-        letterContainer.classList.remove('hidden');
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+    // Abrir el sobre
+    if (openSeal) {
+        openSeal.addEventListener('click', () => {
+            envelopeWrapper.classList.add('hidden');
+            letterContainer.classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
 
-    // Volver a cerrar el sobre
-    closeLetter.addEventListener('click', () => {
-        letterContainer.classList.add('hidden');
-        envelopeWrapper.classList.remove('hidden');
-    });
+    // Cerrar y volver al sobre
+    if (closeLetter) {
+        closeLetter.addEventListener('click', () => {
+            letterContainer.classList.add('hidden');
+            envelopeWrapper.classList.remove('hidden');
+        });
+    }
 
-    // Interacción con los botones de cualidades
+    // Cambiar el mensaje al tocar cada botón de cualidad
     traitButtons.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Quitar clase activa a todos
             traitButtons.forEach(b => b.classList.remove('active'));
-            // Activar el botón presionado
             btn.classList.add('active');
 
             const key = btn.getAttribute('data-trait');
-            
-            // Transición suave del texto
             traitDisplay.style.opacity = 0;
             setTimeout(() => {
                 traitDisplay.innerHTML = `<p>${traitsMessages[key]}</p>`;
                 traitDisplay.style.opacity = 1;
-            }, 200);
+            }, 180);
         });
     });
 
-    // Crear efecto de luciérnagas / destellos dorados en el bosque nocturno
+    // Luciérnagas en el fondo
     function createFireflies() {
         const count = 25;
         for (let i = 0; i < count; i++) {
